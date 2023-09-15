@@ -1,2 +1,2 @@
-# ansible_tutoria
-This 1 is my awesome Ansible respository!
+# ansible_tutorial
+This is my awesome Ansible respository!
