@@ -9,9 +9,9 @@
       update_cache: yes     
         
         
-  - name: install httpd package
+  - name: remove httpd package
     yum:
       name: httpd
-      state: latest
+      state: absent
 
 
