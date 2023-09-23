@@ -4,12 +4,17 @@
   become: true
   tasks:
  
+  - name: update respository index
+    yum:
+      update_cache: yes     
+        
+        
   - name: install httpd and php package for Centos
-    package:
+    yum:
       name: 
         - httpd
         - php
       state: latest
-      update_cache: yes
+    when: ansible_distribution == "CentOS"
     
 
