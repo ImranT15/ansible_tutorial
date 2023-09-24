@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+ 
+  - name: install httpd and php package for Centos
+    package:
+      name: 
+        - httpd
+        - php
+      state: latest
+      update_cache: yes
+    
+

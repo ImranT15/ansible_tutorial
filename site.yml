@@ -31,4 +31,10 @@
       state: latest
     when: ansible_distribution == "CentOS"
 
-     
+- hosts: file_servers
+  become: true
+  tasks:
+  - name: install samba package
+    yum:
+      name: samba
+      state: latest 
