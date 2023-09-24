@@ -2,9 +2,10 @@
 
 - hosts: all
   become: true
-  tasks:
+  pre_tasks:
   
   - name: install updates (CentOS)
+    tags: always
     yum:
       update_only: yes
       update_cache: yes  
@@ -15,6 +16,7 @@
   tasks:
         
   - name: install httpd and php package for Centos
+    tags: apache,centos, httpd
     yum:
       name: 
         - httpd
@@ -26,6 +28,7 @@
   become: true
   tasks:
   - name: install mariadb package (CentosOS)
+    tags: centos,db,mariadb
     yum:
       name: mariadb
       state: latest
